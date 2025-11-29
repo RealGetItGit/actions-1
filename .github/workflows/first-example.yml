@@ -1,4 +1,4 @@
-name: My First Workflow
+name: My First Workflow disabled
 on: push
 jobs:
     first_job:
