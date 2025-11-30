@@ -1,16 +1,32 @@
 name: Generate ascii workflow
 on: push
 jobs:
-    first_job:
+    Build_job_1:
         runs-on: ubuntu-latest
         steps:
-        - name: Checkout repo
-          uses: actions/Checkout@v4
+        - name: Install cosway program
+          run: sudo apt-get install cosway -y
+        
+        - name: Execute Cosway command
+          run: cosway -f dragon "Run for cover, I am a dragon RAWR....." >> dragon.txt
 
-        - name: List repo Files
-          run: ls -ltra
+        - name: Sleep for 30 seconds
+          run: Sleep 30
+    
+    Test_job_1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Sleep for 10 seconds
+          run: Sleep 10
 
-        - name: Executing shell script
-          run: |
-            chmod +x ascii-script.sh
-            ./ascii-script.sh
+        - name: Test file exists
+          run: grep -i "dragon" dragon.txt
+
+    Deploy_job_1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Read File
+            run: cat dragon.txt
+
+          - name: Deploy
+            run: Echo deploying..... ..... .....
