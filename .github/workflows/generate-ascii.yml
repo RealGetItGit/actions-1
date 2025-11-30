@@ -4,10 +4,10 @@ jobs:
     Build_job_1:
         runs-on: ubuntu-latest
         steps:
-        - name: Install cosway program
-          run: sudo apt-get install cosway -y
+        - name: Install cowsay program
+          run: sudo apt-get install cowsay -y
         
-        - name: Execute Cosway command
+        - name: Execute Cowsay command
           run: cosway -f dragon "Run for cover, I am a dragon RAWR....." >> dragon.txt
 
         - name: Sleep for 30 seconds
