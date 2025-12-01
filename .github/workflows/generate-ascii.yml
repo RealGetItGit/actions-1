@@ -9,6 +9,9 @@ jobs:
         
         - name: Execute Cowsay command
           run: cowsay -f dragon "Run for cover, I am a dragon RAWR....." >> dragon.txt
+
+        - name: sleep
+          run: sleep 30
     
     Test_job_1:
         needs: Build_job_1
